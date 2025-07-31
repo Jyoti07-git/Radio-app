@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starbucks</title>
     <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
     <section>
@@ -35,13 +37,13 @@
         <div class="gloss-effect"></div>
         <div class="content">
             <div class="textbox">
-                <h2>Tune Into the Heartbeat of ,<br>It's <span>Real Radio</span></h2>
+                <h2>Tune Into the Heartbeat,<br> of<span> Real Radio</span></h2>
                 <p>Bringing you non-stop music<br> live shows, breaking news, and inspiring voices — all in one place,  <br>24/7, wherever you are.</p>
                 <a href="#">Get App</a></div>
              <div class="imgbox">
             <img src="images/img1.png"  class="radio">
         </div></div>
-        <ul class="thumb">
+        <ul class="thumb" style="display: none;">
             <li><img src="images/thumb1.png" onclick="imgslider('images/img1.png');changecirclecolor('#B4BD62')"> </li>
             <li><img src="images/thumb2.png" onclick="imgslider('images/img2.png');changecirclecolor('#E2E2D2')"></li>
             <li><img src="images/thumb3.png" onclick="imgslider('images/img3.png');changecirclecolor('#8EBD9D')"> </li>
@@ -100,7 +102,63 @@
           </div>
         </div>
       </div>
-      
+      <section class="news-scroll-section">
+  <div class="news-scroll-container">
+
+    <!-- Left side: Scrollable logos -->
+    <div class="news-scroll-images">
+      <div class="image-group" data-index="0">
+        <img src="images/cnn.png" class="tall" alt="CNN" />
+        <img src="images/cnbc.png" class="square" alt="CNBC" />
+        <img src="images/nascar.png" class="wide" alt="MSNBC" />
+      </div>
+      <div class="image-group" data-index="1">
+        <img src="images/fox.png" class="tall" alt="Fox News" />
+        <img src="images/college.png" class="square" alt="College Football" />
+        <img src="images/espn.png" class="wide" alt="ESPN" />
+      </div>
+      <div class="image-group" data-index="2">
+        <img src="images/latin.jpeg" class="square" alt="Latin" />
+        <img src="images/classic.png" class="wide" alt="Classic" />
+        <img src="images/country.jpeg" class="tall" alt="Country" />
+      </div>
+      <div class="image-group" data-index="3">
+        <img src="images/audio.png" class="square" alt="Audiobook 1" />
+        <img src="images/audio2.jpeg" class="tall" alt="Audiobook 2" />
+        <img src="images/audio3.jpg" class="wide" alt="Audiobook 3" />
+      </div>
+      <div class="image-group" data-index="4">
+        <img src="images/pod1.jpeg" class="wide" alt="Podcast 1" />
+        <img src="images/pod2.jpeg" class="square" alt="Podcast 2" />
+        <img src="images/pod4.png" class="tall" alt="Podcast 4" />
+      </div>
+    </div>
+
+    <!-- Right side: Sticky headings + paragraph -->
+    <div class="news-scroll-text sticky-text">
+      <div class="headings-list">
+        <h2 class="scroll-heading active" data-index="0">BREAKING NEWS.</h2>
+        <h2 class="scroll-heading" data-index="1">LIVE SPORTS.</h2>
+        <h2 class="scroll-heading" data-index="2">NONSTOP MUSIC.</h2>
+        <h2 class="scroll-heading" data-index="3">UNLIMITED AUDIOBOOKS.</h2>
+        <h2 class="scroll-heading" data-index="4">ALL YOUR PODCASTS.</h2>
+        <p id="news-paragraph">Stay informed with CNN's top breaking news and live coverage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      <script>
+        window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if(window.scrollY > 50){ // change 50 to your desired scroll threshold
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+      </script>
     <script type="text/javascript">
         const images = [
             { img: 'images/img1.png', color: '#B4BD62' },
@@ -142,6 +200,36 @@
       document.body.classList.toggle('dark-theme');
     });
   </script>
+  <script>
+  const imageGroups = document.querySelectorAll('.image-group');
+  const headings = document.querySelectorAll('.scroll-heading');
+  const paragraph = document.getElementById('news-paragraph');
+  const descriptions = [
+    "Stay informed with CNN's top breaking news and live coverage.",
+    "Watch College Football and Fox Sports LIVE anytime, anywhere.",
+    "Enjoy nonstop music with Latin, Classic, and Country channels.",
+    "Listen to unlimited audiobooks and audio entertainment.",
+    "Catch all your favorite podcasts – anytime, anywhere."
+  ];
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = +entry.target.dataset.index;
+        headings.forEach(h => h.classList.remove('active'));
+        if (headings[index]) headings[index].classList.add('active');
+        if (descriptions[index]) paragraph.textContent = descriptions[index];
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.5
+  });
+
+  imageGroups.forEach(group => observer.observe(group));
+</script>
+
+
   
 </body>
 </html>

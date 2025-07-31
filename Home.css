@@ -6,7 +6,7 @@
 }
 section{
     width: 100%;
-    padding:100px;
+    padding:40px;
     min-height: 100vh;
     position:relative;
     display: flex;
@@ -15,14 +15,23 @@ section{
     background: #fff;
 }
 header {
-   position: absolute;
-   display: flex;
-    align-items: center;
-    justify-content: space-between;
-    top:0;
-    left:0;
+   position: fixed; /* makes it stick to viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* so it stays above other content */
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent; /* initial bg */
 
     
+}
+header.scrolled {
+  background-color: #Dcb261; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* optional shadow when scrolled */
 }
 header.logo{
     position: relative;
@@ -150,27 +159,27 @@ header ul li a:hover::after {
     height:500px;
     max-width: 340px;
 }
-.thumb{
-    position:absolute;
+.thumb {
+    position: absolute;
     bottom: 20px;
-    left:50%;
+    left: 50%;
     transform: translateX(-50%);
-    display:flex;
-    
+    display: none; /* Hide the thumbnails */
 }
-.thumb li{
+.thumb li {
     list-style-type: none;
-    margin:0 20px;
+    margin: 0 20px;
     display: inline-block;
-    cursor:pointer;
+    cursor: pointer;
     transition: 0.8s;
 }
-.thumb li :hover{
+.thumb li:hover {
     transform: translateY(-15px) !important;
 }
-.thumb li img{
+.thumb li img {
     max-width: 60px;
 }
+
 .gloss-effect {
     position: absolute;
     top: 50%;
@@ -217,13 +226,57 @@ header ul li a:hover::after {
     width:20px;
 
 }
-.theme-switch {
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-left: 25px;
-  }
-  
+.news-scroll-section {
+  display: flex;
+  flex-direction: row;
+}
+.news-scroll-container {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+}
+.news-scroll-images {
+  flex: 1;
+  padding: 0 20px;
+}
+.image-group {
+  display: flex;
+  gap: 20px;
+  margin: 100px 0;
+}
+.image-group img {
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.image-group img.tall {
+  height: 200px;
+  width: 120px;
+}
+.image-group img.square {
+  height: 140px;
+  width: 140px;
+}
+.image-group img.wide {
+  height: 120px;
+  width: 200px;
+}
+.news-scroll-text {
+  flex: 0 0 40%;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+.scroll-heading {
+  opacity: 0.3;
+  transition: opacity 0.3s;
+  font-size: 1.8em;
+   margin: 30px 0 10px;
+}
+.scroll-heading.active {
+  opacity: 1;
+  color: #124075;
+}
   .theme-switch input {
     display: none;
   }
