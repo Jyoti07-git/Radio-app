@@ -44,19 +44,23 @@
             
         
         <div class="gloss-effect"></div>
-        <div class="content">
-            <div class="textbox">
-                <h2>Tune Into the Heartbeat,<br> of<span> Real Radio</span></h2>
-                <p>Bringing you non-stop music<br> live shows, breaking news, and inspiring voices — all in one place,  <br>24/7, wherever you are.</p>
-                <a href="#">Get App</a></div>
-             <div class="imgbox">
-            <img src="images/img1.png"  class="radio">
-        </div></div>
-        <ul class="thumb" style="display: none;">
-            <li><img src="images/thumb1.png" onclick="imgslider('images/img1.png');changecirclecolor('#B4BD62')"> </li>
-            <li><img src="images/thumb2.png" onclick="imgslider('images/img2.png');changecirclecolor('#E2E2D2')"></li>
-            <li><img src="images/thumb3.png" onclick="imgslider('images/img3.png');changecirclecolor('#8EBD9D')"> </li>
-        </ul>
+
+<div class="content">
+  <div class="textbox">
+    <h2>Tune Into the Heartbeat,<br> of <span>Real Radio</span></h2>
+    <p>Bringing you non-stop music<br> live shows, breaking news, and inspiring voices — all in one place,<br> 24/7, wherever you are.</p>
+    <a href="#">Get App</a>
+  </div>
+  <div class="imgbox">
+    <img src="images/img1.png" class="radio" />
+  </div>
+</div>
+
+<ul class="thumb">
+  <li><img src="images/thumb1.png" onclick="manualChange(0)" /></li>
+  <li><img src="images/thumb2.png" onclick="manualChange(1)" /></li>
+  <li><img src="images/thumb3.png" onclick="manualChange(2)" /></li>
+</ul>
         
         
     </section>
@@ -156,7 +160,26 @@
     </div>
   </div>
 </section>
- 
+  <div class="hero">
+    <div class="card">
+      
+
+      <main>
+        <div class="image-section">
+          <img src="images/alexa.png" alt="Alexa Player" />
+        </div>
+
+        <div class="content-section">
+          <h1>Smart Speaker <span class="highlight">Alexa</span></h1>
+          <p>Experience high-quality sound and smart voice control at your fingertips. Music, answers, and more with Alexa.</p>
+          <div class="buttons">
+            <button class="buy-btn">Buy now</button>
+            <button class="fav-btn">♡</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
 
 <script>
  function handleSearch() {
@@ -198,47 +221,69 @@ function toggleTheme() {
   }
 });
       </script>
-    <script type="text/javascript">
-        const images = [
-            { img: 'images/img1.png', color: '#B4BD62' },
-            { img: 'images/img2.png', color: '#E2E2D2' },
-            { img: 'images/img3.png', color: '#8EBD9D' }
-        ];
-    
-        let index = 0;
-    
-        function imgslider(anything){
-            document.querySelector('.radio').src = anything;
-        }
-    
-        function changecirclecolor(color){
-            document.querySelector('section').style.background = color;
-        }
-    
-        function highlightThumb(index) {
-            const thumbs = document.querySelectorAll('.thumb li');
-            thumbs.forEach((thumb, i) => {
-                thumb.style.transform = i === index ? 'translateY(-15px)' : 'translateY(0)';
-            });
-        }
-    
-        function autoChange() {
-            imgslider(images[index].img);
-            changecirclecolor(images[index].color);
-            highlightThumb(index);
-    
-            index = (index + 1) % images.length;
-        }
-    
-        setInterval(autoChange, 2000); // Auto change every 3 seconds
-    </script>
-   <script>
-    const themeToggle = document.getElementById('theme-toggle');
-  
-    themeToggle.addEventListener('change', () => {
-      document.body.classList.toggle('dark-theme');
+    <script>
+  const images = [
+    {
+      img: 'images/img1.png',
+      color: '#B4BD62',
+      heading: 'Tune Into the Heartbeat,<br> of <span>Real Radio</span>',
+      text: 'Bringing you non-stop music<br> live shows, breaking news, and inspiring voices — all in one place,<br> 24/7, wherever you are.'
+    },
+    {
+      img: 'images/img2.png',
+      color: '#E2E2D2',
+      heading: 'Feel the Rhythm,<br> of <span>Fresh Beats</span>',
+      text: 'Your daily dose of trending tracks,<br> global artists, and genre-spanning playlists.<br> Music that moves with you.'
+    },
+    {
+      img: 'images/img3.png',
+      color: '#8EBD9D',
+      heading: 'Connect Deeper,<br> with <span>Sound Stories</span>',
+      text: 'Dive into inspiring talk shows,<br> motivational voices, and soulful vibes.<br> Anytime. Anywhere.'
+    }
+  ];
+
+  let index = 0;
+
+  function imgslider(src) {
+    document.querySelector('.radio').src = src;
+  }
+
+  function changecirclecolor(color) {
+    document.querySelector('section').style.background = color;
+  }
+
+  function updateContent(i) {
+    document.querySelector('.textbox h2').innerHTML = images[i].heading;
+    document.querySelector('.textbox p').innerHTML = images[i].text;
+  }
+
+  function highlightThumb(i) {
+    const thumbs = document.querySelectorAll('.thumb li');
+    thumbs.forEach((thumb, idx) => {
+      thumb.style.transform = idx === i ? 'translateY(-15px)' : 'translateY(0)';
     });
-  </script>
+  }
+
+  function autoChange() {
+    imgslider(images[index].img);
+    changecirclecolor(images[index].color);
+    updateContent(index);
+    highlightThumb(index);
+
+    index = (index + 1) % images.length;
+  }
+
+  function manualChange(i) {
+    index = i;
+    imgslider(images[i].img);
+    changecirclecolor(images[i].color);
+    updateContent(i);
+    highlightThumb(i);
+  }
+
+  setInterval(autoChange, 3000); // change every 3 seconds
+</script>
   <script>
   const imageGroups = document.querySelectorAll('.image-group');
   const headings = document.querySelectorAll('.scroll-heading');
