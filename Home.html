@@ -48,7 +48,7 @@
 <div class="content">
   <div class="textbox">
     <h2>Tune Into the Heartbeat,<br> of <span>Real Radio</span></h2>
-    <p>Bringing you non-stop music<br> live shows, breaking news, and inspiring voices — all in one place,<br> 24/7, wherever you are.</p>
+    <p>Bringing you non-stop music<br> live shows, breaking news, — all in one place,<br> 24/7, wherever you are.</p>
     <a href="#">Get App</a>
   </div>
   <div class="imgbox">
@@ -160,6 +160,7 @@
     </div>
   </div>
 </section>
+      
   <div class="hero">
     <div class="card">
       
@@ -227,7 +228,7 @@ function toggleTheme() {
       img: 'images/img1.png',
       color: '#B4BD62',
       heading: 'Tune Into the Heartbeat,<br> of <span>Real Radio</span>',
-      text: 'Bringing you non-stop music<br> live shows, breaking news, and inspiring voices — all in one place,<br> 24/7, wherever you are.'
+      text: 'Bringing you non-stop music<br> live shows, breaking news,and — all in one place,<br> 24/7, wherever you are.'
     },
     {
       img: 'images/img2.png',
@@ -284,7 +285,7 @@ function toggleTheme() {
 
   setInterval(autoChange, 3000); // change every 3 seconds
 </script>
-  <script>
+<script>
   const imageGroups = document.querySelectorAll('.image-group');
   const headings = document.querySelectorAll('.scroll-heading');
   const paragraph = document.getElementById('news-paragraph');
@@ -297,20 +298,23 @@ function toggleTheme() {
   ];
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const index = +entry.target.dataset.index;
-        headings.forEach(h => h.classList.remove('active'));
-        if (headings[index]) headings[index].classList.add('active');
-        if (descriptions[index]) paragraph.textContent = descriptions[index];
-      }
-    });
-  }, {
-    root: null,
-    threshold: 0.5
-  });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const index = +entry.target.dataset.index;
 
-  imageGroups.forEach(group => observer.observe(group));
+      entry.target.classList.add('visible');
+
+      headings.forEach(h => h.classList.remove('active'));
+      if (headings[index]) headings[index].classList.add('active');
+      if (descriptions[index]) paragraph.textContent = descriptions[index];
+    }
+  });
+}, {
+  root: null,
+  threshold: 0.5
+});
+
+imageGroups.forEach(group => observer.observe(group));
 </script>
 
 
