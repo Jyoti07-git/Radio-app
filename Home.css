@@ -677,6 +677,7 @@ h1 {
 .footer-heading {
   font: bold 20px/1.3 Arial, sans-serif;
   margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .project-button {
