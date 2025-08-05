@@ -3,26 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starbucks</title>
+    <title>Radioapp</title>
     <link rel="stylesheet" href="Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 </head>
 <body>
-    <section>
-        
+  <section>
+    
          <header id="main-header">
-    <div class="nav-left">
-      <div class="logo">Company Name</div>
-      <div class="theme-toggle" onclick="toggleTheme()">
-        <i class="fas fa-moon"></i>
-      </div>
-    </div>
+           <div class="nav-left">
+            <div class="logo">Company Name</div>
+             <div class="theme-toggle" onclick="toggleTheme()">
+               <i class="fas fa-moon"></i>
+             </div>
+           </div>
 
     <nav class="nav-center">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">Near Me</a></li>
+        <li><a href="#">Radio</a></li>
+        <li><a href="#">Podcasts</a></li>
         <li>
           <div class="search-container">
             <input type="text" class="search-input" placeholder="Search...">
@@ -61,61 +63,96 @@
   <li><img src="images/thumb2.png" onclick="manualChange(1)" /></li>
   <li><img src="images/thumb3.png" onclick="manualChange(2)" /></li>
 </ul>
-        
-        
-    </section>
-    <div class="main-wrapper">
-        <!-- Left Container holding multiple left sections -->
-        <div class="left-container">
-          <!-- First Left Section -->
-          <div class="left-section">
-            <h2>Most popular radio in your country</h2>
-            <div class="scroll-row">
-              <!-- Repeat cards as needed -->
-              <div class="card"><img src="https://via.placeholder.com/70" alt="Radio" /><p>Mirchi Love</p></div>
-              <div class="card"><img src="https://via.placeholder.com/70" alt="Radio" /><p>Big FM</p></div>
-            </div>
-          </div>
-      
-          <!-- Second Left Section -->
-          <div class="left-section">
-            <h2>Newly added radio stations</h2>
-            <div class="scroll-row">
-              <div class="card"><img src="https://via.placeholder.com/70" alt="Radio" /><p>Sneh Bhakti</p></div>
-              <div class="card"><img src="https://via.placeholder.com/70" alt="Radio" /><p>Mixify</p></div>
-            </div>
-          </div>
-        </div>
-      
-        <!-- Right Section beside both left sections -->
-        <div class="right-section">
-          <h2>Trending globally</h2>
-          <div class="grid">
-            <div class="grid-item">
-              <div class="info">
-                <img src="https://via.placeholder.com/45" />
-                <div class="text">
-                  <span>MDR 1 Radio</span>
-                  <span>News, Music</span>
-                </div>
+  </section>
+
+<section class="featured-section">
+  <div class="glass-box">
+    <div class="left-container">
+      <div class="left-section">
+        <h2>Most popular radio in your country</h2>
+        <div class="scroll-row">
+          <div class="card">
+            <img src="images/pod4.png" alt="Radio" class="profile-img" />
+            <div class="card-info">
+              <p>Mirchi Love</p>
+              <div class="stats">
+                <span>12.5k listeners</span>
+                <button class="follow-btn">Follow</button>
               </div>
-              <div class="icons"><i></i><i></i></div>
-            </div>
-      
-            <div class="grid-item">
-              <div class="info">
-                <img src="https://via.placeholder.com/45" />
-                <div class="text">
-                  <span>TECHNO4EVER</span>
-                  <span>Techno, Trance</span>
-                </div>
-              </div>
-              <div class="icons"><i></i><i></i></div>
             </div>
           </div>
+          <div class="card">
+            <img src="images/pod5.png" alt="Radio" class="profile-img" />
+            <div class="card-info">
+              <p>Big FM</p>
+              <div class="stats">
+                <span>9.8k listeners</span>
+                <button class="follow-btn">Follow</button>
+              </div>
+            </div>
+          </div>
+          <!-- Add more cards as needed -->
         </div>
       </div>
-      <section class="news-scroll-section">
+      <div class="left-section">
+        <h2>Newly added radio stations</h2>
+        <div class="scroll-row">
+          <div class="card">
+            <img src="images/pod1.jpeg" alt="Radio" class="profile-img" />
+            <div class="card-info">
+              <p>Sneh Bhakti</p>
+              <div class="stats">
+                <span>2.3k listeners</span>
+                <button class="follow-btn">Follow</button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/pod2.jpeg" alt="Radio" class="profile-img" />
+            <div class="card-info">
+              <p>Mixify</p>
+              <div class="stats">
+                <span>1.2k listeners</span>
+                <button class="follow-btn">Follow</button>
+              </div>
+            </div>
+          </div>
+          <!-- Add more cards as needed -->
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <h2>Trending globally</h2>
+      <div class="trending-scroll">
+        <div class="trending-card">
+          <img src="images/today.jpeg" class="trend-img" />
+          <div class="trend-info">
+            <span class="trend-title">MDR 1 Radio</span>
+            <span class="trend-desc">News, Music</span>
+            <div class="trend-actions">
+              <button class="follow-btn">Follow</button>
+              <button class="like-btn"><i class="fas fa-heart"></i> 3.2k</button>
+            </div>
+          </div>
+        </div>
+        <div class="trending-card">
+          <img src="images/logos.png" class="trend-img" />
+          <div class="trend-info">
+            <span class="trend-title">TECHNO4EVER</span>
+            <span class="trend-desc">Techno, Trance</span>
+            <div class="trend-actions">
+              <button class="follow-btn">Follow</button>
+              <button class="like-btn"><i class="fas fa-heart"></i> 2.8k</button>
+            </div>
+          </div>
+        </div>
+        <!-- Add more trending cards as needed -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="news-scroll-section">
   <div class="news-scroll-container">
 
     <!-- Left side: Scrollable logos -->
@@ -178,38 +215,77 @@
     <img src="images/box.png" alt="Alexa Player" />
   </div>
 </div>
-<div class="hero-section">
-    <div class="header">
-     
-      <h1>Let's Make<br>Something Great<br>Together</h1>
-      <button class="primary-btn">Contact Us</button>
+
+<section class="discover-section-combined">
+  <div class="discover-header">
+    <div class="header-content">
+      <h1 class="discover-title-hero animate-fadein">Discover More<br>Poadcast</h1>
     </div>
-<div class="shapes">
+    <div class="shapes">
       <div class="shape shape1"></div>
       <div class="shape shape2"></div>
       <div class="shape shape3"></div>
     </div>
   </div>
+  <div class="discover-scroll-row">
+    <div class="discover-card animate-card">
+      <img src="images/pod1.jpeg" alt="Podcast 1" />
+      <div class="discover-info">
+        <p class="discover-title">The Daily Drive</p>
+        <button class="listen-btn">Listen</button>
+      </div>
+    </div>
+    <div class="discover-card animate-card" style="animation-delay:0.1s;">
+      <img src="images/pod2.jpeg" alt="Podcast 2" />
+      <div class="discover-info">
+        <p class="discover-title">Morning Brew</p>
+        <button class="listen-btn">Listen</button>
+      </div>
+    </div>
+    <div class="discover-card animate-card" style="animation-delay:0.2s;">
+      <img src="images/pod4.png" alt="Podcast 3" />
+      <div class="discover-info">
+        <p class="discover-title">Late Night Talks</p>
+        <button class="listen-btn">Listen</button>
+      </div>
+    </div>
+    <!-- Add more discover-card blocks as needed -->
+  </div>
+</section>
 
-    <div class="wave-divider"></div>
-    <div class="wave-container">
-  <svg viewBox="0 0 1440 320">
-    <path fill="#1a0459" fill-opacity="1"
-      d="M0,224L60,202.7C120,181,240,139,360,122.7C480,107,600,117,720,122.7C840,128,960,128,1080,128C1200,128,1320,128,1380,128L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-    </path>
-  </svg>
-</div>
-
-  <!-- Footer (Should blend smoothly with wave) -->
   <footer class="footer">
-    <h3>Radio FM</h3>
-    <ul>
-      <li>About us</li>
-      <li>Contact</li>
-      <li>By Country</li>
-      <li>By Language</li>
-    </ul>
-  </footer>
+    <div class="blurry-circle"></div>
+     <div class="footer-content">
+      <!-- Left Section -->
+       <div class="footer-left">
+        <a href="#">About Us</a><br/>
+        <a href="#">Terms & Conditions</a><br/>
+        <a href="#">Contact</a><br/>
+        <a href="#">Widget</a><br/>
+        <a href="#">More</a><br/>
+       </div>
+       <!-- Center Section -->
+        <div class="footer-center">
+          <p class="footer-heading">Want to Listen Your Fav?</p>
+          <a href="#" class="project-button">Listen Now →</a>
+        </div>
+        <!-- Right Section with Social Icons -->
+         <div class="footer-right">
+          <div class="social-icons">
+            <a href="#">Bē</a>
+            <a href="#">⧉</a>
+            <a href="#">in</a>
+          </div>
+        </div>
+      </div>
+<!-- Footer Bottom -->
+ <div class="footer-bottom">
+  <p class="copyright">
+    © Copyright 2025. Design by @Jyotiprava Panda.</p>
+  </div>
+<h1 class="footer-background-text">LET’S WORK TOGETHER</h1>
+</footer>
+
 <script>
  function handleSearch() {
   const input = document.querySelector('.search-input');
