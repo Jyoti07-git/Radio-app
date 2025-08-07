@@ -285,7 +285,10 @@ header.scrolled {
  
 .news-scroll-section {
   min-height: 250vh; /* long scroll */
-  background: transparent;
+  background-image: url(images/wallpaper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   padding: 20px;
    overflow: visible;
 }
@@ -339,68 +342,53 @@ header.scrolled {
   .theme-switch input {
     display: none;
   }
-  .hero {
-  width: 90%;
-  max-width: 1000px;
-  min-height: 400px;
   
-    background: linear-gradient(135deg, #c3ecf7, #e5d1f2);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  margin: 50px auto;
-  position: relative; /* Add this for positioning the .card */
-}
 
+/* Base layout */
 .hero {
   width: 90%;
-  max-width: 1000px;
-  min-height: 400px;
-  background: linear-gradient(135deg, #fcd5ce, #d8e2dc); /* Soothing gradient */
+  max-width: 1200px;
+  min-height: 300px;
+  background-image: url(images/bg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 20px;
-  padding: 30px;
+  padding: 40px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   margin: 50px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-  overflow: hidden;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
+/* Card content */
 .hero .card {
   z-index: 2;
-  width: 40%;
+  max-width: 500px;
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 15px;
   backdrop-filter: blur(12px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   padding: 2rem;
-  text-align: left;
-}
-
-.image-section img {
-  width: 300px;
-  max-width: 100%;
-}
-
-.image-section {
-  width: 50%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex: 1 1 300px;
 }
 
 .content-section h3 {
   font-size: 32px;
   margin-bottom: 15px;
+  color: #fff;
 }
+
 .content-section p {
   font-size: 16px;
-  color: #Dcb261;
+  color: #DCB261;
   margin-bottom: 20px;
   line-height: 1.5;
 }
+
 .content-section span {
   color: #3a86ff;
 }
@@ -408,7 +396,7 @@ header.scrolled {
 .buttons {
   display: flex;
   gap: 15px;
-  margin-top: 20px;
+  flex-wrap: wrap;
 }
 
 .buy-btn {
@@ -422,13 +410,79 @@ header.scrolled {
 }
 
 .fav-btn {
-  border: 1px solid #888;
-  background: none;
+  border: 1px solid #fff;
+  color: white;
+  background: transparent;
   padding: 12px 18px;
   border-radius: 25px;
   cursor: pointer;
+  font-size: 18px;
 }
 
+/* Image section */
+.image-section {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .content-section h3 {
+    font-size: 24px;
+  }
+
+  .content-section p {
+    font-size: 14px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .buy-btn,
+  .fav-btn {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-section h3 {
+    font-size: 20px;
+  }
+
+  .content-section p {
+    font-size: 13px;
+  }
+
+  .image-section img {
+    max-width: 250px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
   .theme-switch .slider {
     width: 50px;
     height: 25px;
@@ -463,104 +517,14 @@ header.scrolled {
     background-color: #1a1a1a;
     color: #f5f5f5;
   }
-.main-wrapper {
+/*.main-wrapper {
     display: flex;
     gap: 20px;
     align-items: flex-start;
     margin-top: 60px;
   }
   
-  /* Left container holds stacked sections */
-  /*.main-wrapper .left-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 2;
-  }
-  
-  .main-wrapper .left-section {
-    background-color: #E2E2D2;
-    padding: 20px;
-    border-radius: 12px;
-  }
-  
-  .main-wrapper .scroll-row {
-    display: flex;
-    gap: 15px;
-    overflow-x: auto;
-    padding-top: 10px;
-  }
-  
-  .main-wrapper .card {
-    background-color: #E2E2D2;
-    padding: 10px;
-    border-radius: 10px;
-    min-width: 100px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-  
-  .main-wrapper .card img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    border: 2px solid #01fefe;
-  }
-  
-  
-  .main-wrapper .right-section {
-    flex: 1;
-    background-color: #E2E2D2;
-    padding: 20px;
-    border-radius: 12px;
-    height: 100%;
-  }
-  
-  .main-wrapper .grid {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .main-wrapper .grid-item {
-    background-color: #2a2a2a;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .main-wrapper .info {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-  
-  .main-wrapper .info img {
-    width: 45px;
-    height: 45px;
-    border-radius: 8px;
-  }
-  
-  .main-wrapper .text span:first-child {
-    font-weight: bold;
-    display: block;
-  }
-  
-  .main-wrapper .text span:last-child {
-    font-size: 12px;
-    color: #01fefe;
-    display: block;
-  }
-  
-  .main-wrapper .icons i {
-    width: 20px;
-    height: 20px;
-    background: #444;
-    border-radius: 50%;
-    display: inline-block;
-  }*/
+ 
   .hero-section {
   margin-top: 0;
   padding-top: 0;
@@ -626,16 +590,16 @@ h1 {
 
 .footer {
   position: relative;
-  width: 100%; /* spans full viewport width */
-  background: #D4FF00; /* lime-green block only here */
+  width: 100%; 
+  background: #D4FF00; 
   color: #000;
-  padding: 68px 20px 120px; /* +8 px top padding offsets default body margin */
+  padding: 68px 20px 120px; /
   overflow: hidden;
   margin-top: auto;
-  box-sizing: border-box; /* keep padding inside width */
+  box-sizing: border-box; /* 
 }
-
-/* --- BLURRY CIRCLE --- */
+*/
+/* --- BLURRY CIRCLE --- 
 .blurry-circle {
   position: absolute;
   top: 50%;
@@ -650,7 +614,7 @@ h1 {
   pointer-events: none;
 }
 
-/* --- LAYOUT GRID --- */
+
 .footer-content {
   display: flex;
   justify-content: space-between;
@@ -666,7 +630,7 @@ h1 {
   flex: 1 1 250px;
 }
 
-/* --- LINKS & HEADINGS --- */
+
 .footer-left a {
   display: block;
   margin-bottom: 6px;
@@ -691,7 +655,7 @@ h1 {
   font-weight: bold;
 }
 
-/* --- SOCIAL ICONS RIGHT --- */
+
 .footer-right {
   display: flex;
   justify-content: flex-end;
@@ -708,7 +672,7 @@ h1 {
   font-size: 18px;
 }
 
-/* --- BOTTOM STRIP --- */
+
 .footer-bottom {
   margin-top: 40px;
   text-align: center;
@@ -716,7 +680,7 @@ h1 {
   z-index: 2;
 }
 
-/* --- LARGE BACKGROUND TEXT --- */
+
 .footer-background-text {
   position: absolute;
   bottom: 10px;
@@ -730,7 +694,7 @@ h1 {
   z-index: 1;
 }
 
-/* --- RESPONSIVE TWEAKS --- */
+
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -740,8 +704,8 @@ h1 {
   .footer-background-text { font-size: 40px; bottom: 0; }
   .project-button { width: 100%; text-align: center; }
 }
+*/
 
-/* Featured Section: Remove background image from section */
 .featured-section {
   background: var(--bg-color, #fff);
   display: flex;
@@ -751,7 +715,7 @@ h1 {
   min-height: 400px;
 }
 
-/* Glass box with internal background image and blur */
+
 .glass-box {
   position: relative;
   display: flex;
@@ -782,13 +746,12 @@ html.dark .glass-box::before {
   filter: blur(12px) brightness(0.5);
 }
 
-/* Glass box content above background */
+
 .left-container, .right-section {
   position: relative;
   z-index: 1;
 }
 
-/* Left and right containers smaller */
 .left-container {
   flex: 1.1;
   display: flex;
@@ -880,7 +843,7 @@ html.dark .glass-box::before {
   transform: scale(1.06);
 }
 
-/* Right section smaller */
+
 .right-section {
   flex: 1;
   background: rgba(255,255,255,0.32);
@@ -1168,4 +1131,99 @@ html.dark .glass-box::before {
   }
   .discover-main { font-size: 1.3rem; }
   .discover-card img { width: 60px; height: 60px; }
+}
+/*Footer section*/
+.footer {
+  position: relative;
+  background: url("images/footerimage.jpg") no-repeat center center/cover;
+  color: #ccc;
+  padding: 60px 40px 30px;
+  font-family: sans-serif;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.8);
+  z-index: 1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+  padding-bottom: 30px;
+}
+
+.column {
+  flex: 1 1 200px;
+  margin: 20px;
+}
+
+.column h4 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 8px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.column ul li:hover {
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  color: #f4efbade;
+  font-size: 14px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 25px;
+  height: 25px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
 }
