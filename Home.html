@@ -9,61 +9,46 @@
 
 </head>
 <body>
-  <section>
-    
-         <header id="main-header">
-           <div class="nav-left">
-            <div class="logo">Company Name</div>
-             <div class="theme-toggle" onclick="toggleTheme()">
-               <i class="fas fa-moon"></i>
-             </div>
-           </div>
-
-    <nav class="nav-center">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Near Me</a></li>
-        <li><a href="#">Radio</a></li>
-        <li><a href="#">Podcasts</a></li>
-        <li>
-          <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search...">
-            <button class="search-btn" onclick="handleSearch()">
-              <i class="fas fa-search"></i>
-            </button>
-          </div>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="nav-right">
-      <a href="#" class="signup">Sign Up</a>
-      <a href="#" class="register">Register Broadcaster</a>
+  <section class="landingpage">
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-left">
+      <img src="images/logos.png" alt="Logo" class="logo">
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Near Me</a>
+        <a href="#">Radio</a>
+        <a href="#">Podcast</a>
+      </div>
     </div>
-  </header>
+    <div class="nav-buttons">
+      <button class="btn btn-signup">Sign Up</button>
+      <button class="btn btn-register">Register Broadcaster</button>
+    </div>
+  </nav>
 
-            
-            
-        
-        <div class="gloss-effect"></div>
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <div class="content-slide active">
+      <h3>Voices of Our City, Beats of<br> Our<span> Heart </span></h3>
+      <p>Local stories, music, and culture — streaming live just for you.</p>
+      <button class="btn btn-green">See More</button>
+    </div>
 
-<div class="content">
-  <div class="textbox">
-    <h2>Tune Into the Heartbeat,<br> of <span>Real Radio</span></h2>
-    <p>Bringing you non-stop music<br> live shows, breaking news, — all in one place,<br> 24/7, wherever you are.</p>
-    <a href="#">Get App</a>
+    <div class="content-slide">
+      <h3>Where Music Meets <br><span>Your Mood</span></h3>
+      <p>Discover new hits, timeless classics, and exclusive shows 24/7.
+        </p>
+      <button class="btn btn-green">See More</button>
+    </div>
+
+    <div class="content-slide">
+      <h3>Turn Up the Volume, Feel<br> the <span>vibe</span></h3>
+      <p>Non-stop music, live DJ sets, and the hottest hits anytime, anywhere.</p>
+      <button class="btn btn-green">See More</button>
+    </div>
   </div>
-  <div class="imgbox">
-    <img src="images/img1.png" class="radio" />
-  </div>
-</div>
-
-<ul class="thumb">
-  <li><img src="images/thumb1.png" onclick="manualChange(0)" /></li>
-  <li><img src="images/thumb2.png" onclick="manualChange(1)" /></li>
-  <li><img src="images/thumb3.png" onclick="manualChange(2)" /></li>
-</ul>
-  </section>
+</section>
 
 <section class="featured-section">
   <div class="glass-box">
@@ -198,7 +183,7 @@
   </div>
 </section>
       
-  <div class="hero">
+  <div class="app-hero">
   <div class="card">
     <div class="content-section">
       <h3>Get Our App on <span>Playstore</span></h3>
@@ -309,6 +294,22 @@
   </div>
 </footer>
 <script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.content-slide');
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
+
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}, 3000);
+</script>
+
+<script>
  function handleSearch() {
   const input = document.querySelector('.search-input');
   const query = input.value.trim();
@@ -320,23 +321,7 @@
 }
 </script>
 
-<script>
-function toggleTheme() {
-  const body = document.body;
-  const icon = document.querySelector('.theme-toggle i');
 
-  body.classList.toggle('dark');
-
-  // Change icon accordingly
-  if (body.classList.contains('dark')) {
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  } else {
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-  }
-}
-</script>
 
       <script>
    window.addEventListener('scroll', () => {
@@ -348,69 +333,7 @@ function toggleTheme() {
   }
 });
       </script>
-    <script>
-  const images = [
-    {
-      img: 'images/img1.png',
-      color: '#B4BD62',
-      heading: 'Tune Into the Heartbeat,<br> of <span>Real Radio</span>',
-      text: 'Bringing you non-stop music<br> live shows, breaking news,and — all in one place,<br> 24/7, wherever you are.'
-    },
-    {
-      img: 'images/img2.png',
-      color: '#E2E2D2',
-      heading: 'Feel the Rhythm,<br> of <span>Fresh Beats</span>',
-      text: 'Your daily dose of trending tracks,<br> global artists, and genre-spanning playlists.<br> Music that moves with you.'
-    },
-    {
-      img: 'images/img3.png',
-      color: '#8EBD9D',
-      heading: 'Connect Deeper,<br> with <span>Sound Stories</span>',
-      text: 'Dive into inspiring talk shows,<br> motivational voices, and soulful vibes.<br> Anytime. Anywhere.'
-    }
-  ];
-
-  let index = 0;
-
-  function imgslider(src) {
-    document.querySelector('.radio').src = src;
-  }
-
-  function changecirclecolor(color) {
-    document.querySelector('section').style.background = color;
-  }
-
-  function updateContent(i) {
-    document.querySelector('.textbox h2').innerHTML = images[i].heading;
-    document.querySelector('.textbox p').innerHTML = images[i].text;
-  }
-
-  function highlightThumb(i) {
-    const thumbs = document.querySelectorAll('.thumb li');
-    thumbs.forEach((thumb, idx) => {
-      thumb.style.transform = idx === i ? 'translateY(-15px)' : 'translateY(0)';
-    });
-  }
-
-  function autoChange() {
-    imgslider(images[index].img);
-    changecirclecolor(images[index].color);
-    updateContent(index);
-    highlightThumb(index);
-
-    index = (index + 1) % images.length;
-  }
-
-  function manualChange(i) {
-    index = i;
-    imgslider(images[i].img);
-    changecirclecolor(images[i].color);
-    updateContent(i);
-    highlightThumb(i);
-  }
-
-  setInterval(autoChange, 3000); // change every 3 seconds
-</script>
+    
 <script>
   const imageGroups = document.querySelectorAll('.image-group');
   const headings = document.querySelectorAll('.scroll-heading');
