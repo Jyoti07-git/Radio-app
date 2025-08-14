@@ -6,14 +6,15 @@
     <title>Radioapp</title>
     <link rel="stylesheet" href="Home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
 </head>
 
 <body>
-  <header class="navbar" id="navbar">
+   <header class="navbar" id="navbar">
     <div class="nav-container">
         <div class="nav-left">
             <a href="#">
-                <img src="" alt="Logo" class="logo">
+                <img src="images/logos.png" alt="Logo" class="logo">
             </a>
             <div class="nav-links">
                 <a href="#">Home</a>
@@ -32,6 +33,9 @@
             <div class="nav-buttons">
                 <button class="btn btn-signup">Sign Up</button>
                 <button class="btn btn-register"><span>Register Broadcaster</span></button>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          🌙
+        </button>
             </div>
         </div>
     </div>
@@ -64,27 +68,27 @@
     <div class="glass-box">
         <div class="left-container">
             <div class="left-section">
-                <h2>Most popular poadcast in your country</h2>
+                <h2>Most popular Radio in your country</h2>
                 <div class="scroll-row">
-                    <div class="card"><img src="https://placehold.co/36x36/1/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Mirchi Love</p><div class="stats"><span>12.5k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/2/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Big FM</p><div class="stats"><span>9.8k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/3/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Radio City</p><div class="stats"><span>8.1k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/4/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Fever 104 FM</p><div class="stats"><span>7.5k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/5/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Red FM</p><div class="stats"><span>6.9k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/6/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>My FM</p><div class="stats"><span>5.2k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card c1"><img src="https://placehold.co/36x36/1/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Mirchi Love</p><div class="stats"><span>12.5k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card c2"><img src="https://placehold.co/36x36/2/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Big FM</p><div class="stats"><span>9.8k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card c3"><img src="https://placehold.co/36x36/3/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Radio City</p><div class="stats"><span>8.1k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card c4"><img src="https://placehold.co/36x36/4/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Fever 104 FM</p><div class="stats"><span>7.5k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card c5"><img src="https://placehold.co/36x36/5/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Red FM</p><div class="stats"><span>6.9k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card c6"><img src="https://placehold.co/36x36/6/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>My FM</p><div class="stats"><span>5.2k listeners</span><button class="follow-btn">Follow</button></div></div></div>
                 </div>
                 <button class="carousel-arrow prev" aria-label="Previous">&lt;</button>
                 <button class="carousel-arrow next" aria-label="Next">&gt;</button>
             </div>
             <div class="left-section">
-                <h2>Newly added poadcasts</h2>
+                <h2>Newly added </h2>
                 <div class="scroll-row">
-                    <div class="card"><img src="https://placehold.co/36x36/A/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Sneh Bhakti</p><div class="stats"><span>2.3k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/B/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Mixify</p><div class="stats"><span>1.2k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/C/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Indie Waves</p><div class="stats"><span>1.1k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/D/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Retro Rewind</p><div class="stats"><span>980 listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/E/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Lofi Beats</p><div class="stats"><span>850 listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/F/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Jazz Club</p><div class="stats"><span>760 listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card i1"><img src="https://placehold.co/36x36/A/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Sneh Bhakti</p><div class="stats"><span>2.3k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card i2"><img src="https://placehold.co/36x36/B/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Mixify</p><div class="stats"><span>1.2k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card i3"><img src="https://placehold.co/36x36/C/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Indie Waves</p><div class="stats"><span>1.1k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card i4"><img src="https://placehold.co/36x36/D/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Retro Rewind</p><div class="stats"><span>980 listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card i5"><img src="https://placehold.co/36x36/E/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Lofi Beats</p><div class="stats"><span>850 listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card i6"><img src="https://placehold.co/36x36/F/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Jazz Club</p><div class="stats"><span>760 listeners</span><button class="follow-btn">Follow</button></div></div></div>
                 </div>
                 <button class="carousel-arrow prev" aria-label="Previous">&lt;</button>
                 <button class="carousel-arrow next" aria-label="Next">&gt;</button>
@@ -106,27 +110,27 @@
     <div class="glass-box">
         <div class="left-container">
             <div class="left-section">
-                <h2>Most popular poadcast in your country</h2>
+                <h2>Most popular podcast in your country</h2>
                 <div class="scroll-row">
-                    <div class="card"><img src="https://placehold.co/36x36/1/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Mirchi Love</p><div class="stats"><span>12.5k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/2/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Big FM</p><div class="stats"><span>9.8k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/3/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Radio City</p><div class="stats"><span>8.1k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/4/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Fever 104 FM</p><div class="stats"><span>7.5k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/5/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Red FM</p><div class="stats"><span>6.9k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/6/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>My FM</p><div class="stats"><span>5.2k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card card1 "><img src="https://placehold.co/36x36/1/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Mirchi Love</p><div class="stats"><span>12.5k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card card2"><img src="https://placehold.co/36x36/2/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Big FM</p><div class="stats"><span>9.8k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card card3"><img src="https://placehold.co/36x36/3/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Radio City</p><div class="stats"><span>8.1k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card card4"><img src="https://placehold.co/36x36/4/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Fever 104 FM</p><div class="stats"><span>7.5k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card card5"><img src="https://placehold.co/36x36/5/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Red FM</p><div class="stats"><span>6.9k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card card6"><img src="https://placehold.co/36x36/6/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>My FM</p><div class="stats"><span>5.2k listeners</span><button class="follow-btn">Follow</button></div></div></div>
                 </div>
                 <button class="carousel-arrow prev" aria-label="Previous">&lt;</button>
                 <button class="carousel-arrow next" aria-label="Next">&gt;</button>
             </div>
             <div class="left-section">
-                <h2>Newly added poadcasts</h2>
+                <h2>Newly added</h2>
                 <div class="scroll-row">
-                    <div class="card"><img src="https://placehold.co/36x36/A/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Sneh Bhakti</p><div class="stats"><span>2.3k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/B/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Mixify</p><div class="stats"><span>1.2k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/C/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Indie Waves</p><div class="stats"><span>1.1k listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/D/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Retro Rewind</p><div class="stats"><span>980 listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/E/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Lofi Beats</p><div class="stats"><span>850 listeners</span><button class="follow-btn">Follow</button></div></div></div>
-                    <div class="card"><img src="https://placehold.co/36x36/F/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Jazz Club</p><div class="stats"><span>760 listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card j1"><img src="https://placehold.co/36x36/A/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Sneh Bhakti</p><div class="stats"><span>2.3k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card j2"><img src="https://placehold.co/36x36/B/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Mixify</p><div class="stats"><span>1.2k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card j3"><img src="https://placehold.co/36x36/C/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Indie Waves</p><div class="stats"><span>1.1k listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card j4"><img src="https://placehold.co/36x36/D/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Retro Rewind</p><div class="stats"><span>980 listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card j5"><img src="https://placehold.co/36x36/E/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Lofi Beats</p><div class="stats"><span>850 listeners</span><button class="follow-btn">Follow</button></div></div></div>
+                    <div class="card j6"><img src="https://placehold.co/36x36/F/FFF?text=P" alt="Radio" class="profile-img" /><div class="card-info"><p>Jazz Club</p><div class="stats"><span>760 listeners</span><button class="follow-btn">Follow</button></div></div></div>
                 </div>
                 <button class="carousel-arrow prev" aria-label="Previous">&lt;</button>
                 <button class="carousel-arrow next" aria-label="Next">&gt;</button>
@@ -135,7 +139,7 @@
         <div class="right-section">
             <h2>Trending globally</h2>
             <div class="trending-scroll">
-                <div class="trending-card"><img src="https://placehold.co/36x36/E74C3C/FFF?text=T" class="trend-img" /><div class="trend-info"><span class="trend-title">MDR 1 Radio</span><span class="trend-desc">News, Music</span><div class="trend-actions"><button class="follow-btn">Follow</button><button class="like-btn">3.2k</button></div></div></div>
+                <div class="trending-card "><img src="https://placehold.co/36x36/E74C3C/FFF?text=T" class="trend-img" /><div class="trend-info"><span class="trend-title">MDR 1 Radio</span><span class="trend-desc">News, Music</span><div class="trend-actions"><button class="follow-btn">Follow</button><button class="like-btn">3.2k</button></div></div></div>
                 <div class="trending-card"><img src="https://placehold.co/36x36/2980B9/FFF?text=T" class="trend-img" /><div class="trend-info"><span class="trend-title">TECHNO4EVER</span><span class="trend-desc">Techno, Trance</span><div class="trend-actions"><button class="follow-btn">Follow</button><button class="like-btn">2.8k</button></div></div></div>
                 <div class="trending-card"><img src="https://placehold.co/36x36/27AE60/FFF?text=T" class="trend-img" /><div class="trend-info"><span class="trend-title">Top 40 Hits</span><span class="trend-desc">Pop, Mainstream</span><div class="trend-actions"><button class="follow-btn">Follow</button><button class="like-btn">2.5k</button></div></div></div>
                 <div class="trending-card"><img src="https://placehold.co/36x36/F39C12/FFF?text=T" class="trend-img" /><div class="trend-info"><span class="trend-title">Classical Dreams</span><span class="trend-desc">Classical, Relax</span><div class="trend-actions"><button class="follow-btn">Follow</button><button class="like-btn">1.9k</button></div></div></div>
@@ -184,12 +188,12 @@
         <h2 class="scroll-heading" data-index="2">NONSTOP MUSIC.</h2>
         <h2 class="scroll-heading" data-index="3">UNLIMITED AUDIOBOOKS.</h2>
         <h2 class="scroll-heading" data-index="4">ALL YOUR PODCASTS.</h2>
-        <p id="news-paragraph" style="color: #a06f2b;">Stay informed with CNN's top breaking news and live coverage.</p>
+        <p id="news-paragraph" style="color: #fff;">Stay informed with CNN's top breaking news and live coverage.</p>
       </div>
     </div>
   </div>
 </section>
-      
+      <section class="playstore">
 <div class="app-hero">
   <div class="card">
     <div class="content-section">
@@ -208,6 +212,7 @@
     
   </div>
 </div>
+</section>
 
 <section class="discover-section-combined">
     <div class="discover-header">
@@ -222,7 +227,7 @@
     </div>
     <div class="discover-carousel-wrapper">
         <div class="discover-scroll-row" id="discover-scroll-row">
-            <div class="discover-card animate-card">
+            <div class="discover-card animate-card ">
                 <img src="https://placehold.co/90x90/E9A241/1A0459?text=Pod+1" alt="Podcast 1" />
                 <div class="discover-info">
                     <p class="discover-title">The Daily Drive</p>
@@ -393,7 +398,7 @@
 
     <div class="footer-bottom">
       <div class="logo-section">
-        <img src="images/logo.svg" alt="Logo" class="logo" />
+        <img src="images/logos.png" alt="Logo" class="logo" />
         <span>Radio FM </span>
       </div>
       <p> © 2025 Radio Fm . All right Reserved</p>
@@ -405,7 +410,30 @@
     </div>
   </div>
 </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".content-slide");
+    let currentIndex = 0;
+    const slideInterval = 3000; // 3 seconds
 
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    // Show the first slide
+    showSlide(currentIndex);
+
+    // Auto change every 3 sec
+    setInterval(nextSlide, slideInterval);
+  });
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const navbar = document.getElementById('navbar');
@@ -603,7 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function startAutoScroll() {
         // Clear any existing interval to prevent multiple running at once
         stopAutoScroll(); 
-        autoScrollInterval = setInterval(showNext, 3500);
+        autoScrollInterval = setInterval(showNext, 2000);
     }
 
     function stopAutoScroll() {
@@ -632,6 +660,19 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCardPositions();
     startAutoScroll();
 });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", function () {
+      body.classList.toggle("dark-theme");
+
+      // Change icon
+      toggleBtn.textContent = body.classList.contains("dark-theme") ? "☀️" : "🌙";
+    });
+  });
 </script>
 
 </body>
